@@ -68,6 +68,7 @@ Este proyecto implementa una base de datos segura para una aplicación psicológ
 
 ```
 PSICO_DB_PROJECT/
+├── 📥 INBOX/                           # ¡NUEVO! Bandeja de entrada automática
 ├── 📚 DOCUMENTATION/                    # Documentación técnica
 │   ├── 02_DATABASE/                    # Documentación de base de datos
 │   └── 05_BUG_ANALYSIS/               # Análisis de bugs y debugging
@@ -101,10 +102,29 @@ PSICO_DB_PROJECT/
 Este proyecto incluye un agente especializado para documentación y organización. Ver [CLAUDE.md](CLAUDE.md) para instrucciones detalladas del agente.
 
 **Comandos rápidos:**
+- `procesa inbox` - **¡NUEVO!** Procesar archivos de la bandeja de entrada
 - `organiza` - Revisar y reorganizar estructura completa
 - `actualiza readme` - Regenerar README.md con archivos actuales  
 - `limpia proyecto` - Eliminar archivos vacíos y reorganizar
-- `nuevo archivo [nombre]` - Ubicar y renombrar según contenido
+- `analiza [archivo]` - Analizar un archivo específico antes de moverlo
+
+### 📥 Bandeja de Entrada Automática
+
+¿Quieres que Claude Code organice tus archivos automáticamente?
+
+1. **Coloca tu archivo** en la carpeta `📥 INBOX/`
+2. **Escribe**: `procesa inbox`
+3. **¡Listo!** El archivo será:
+   - Analizado por contenido
+   - Movido al directorio correcto
+   - Renombrado descriptivamente
+   - Agregado al README automáticamente
+
+**Ejemplo:**
+```
+Tu archivo: 📥 INBOX/bug_fix.md
+Resultado: 📚 DOCUMENTATION/05_BUG_ANALYSIS/LOGIN_BUG_ANALYSIS_SESSION_TIMEOUT.md
+```
 
 ---
 

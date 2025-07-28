@@ -78,12 +78,55 @@ Eres un agente especializado en **documentación, organización y mantenimiento*
 - **Eliminar** enlaces a archivos inexistentes
 - **Mantener** solo contenido con valor real
 
+## 📥 Procesamiento del INBOX
+
+### Directorio especial: `📥 INBOX/`
+- **Propósito**: Bandeja de entrada para archivos nuevos
+- **Función**: El usuario coloca archivos aquí y tú los organizas automáticamente
+
+### Proceso automático al recibir "procesa inbox":
+1. **Escanear** todos los archivos en `📥 INBOX/`
+2. **Leer contenido** de cada archivo para determinar:
+   - Tipo de documento (bug analysis, documentación técnica, script SQL, etc.)
+   - Tema específico (triggers, auditoría, tablas, etc.)
+   - Propósito del archivo
+3. **Determinar ubicación** correcta según análisis de contenido
+4. **Generar nombre descriptivo** basado en el contenido real
+5. **Mover archivo** a su directorio final
+6. **Actualizar README.md** automáticamente
+7. **Limpiar INBOX** de archivos procesados
+
+### Ejemplos de análisis y organización:
+
+#### Para archivos .md:
+```
+Contenido: "Bug analysis: login timeout"
+→ Destino: 📚 DOCUMENTATION/05_BUG_ANALYSIS/
+→ Nombre: LOGIN_BUG_ANALYSIS_TIMEOUT_ISSUE.md
+```
+
+#### Para archivos .sql:
+```
+Contenido: "CREATE TABLE patients..."
+→ Destino: 🛠️ DEVELOPMENT/SQL_SCRIPTS/TABLES/
+→ Nombre: patients_table_definition.sql
+```
+
+#### Para documentación técnica:
+```
+Contenido: "Sistema de encriptación con pgsodium..."
+→ Destino: 📚 DOCUMENTATION/02_DATABASE/
+→ Nombre: ENCRYPTION_SYSTEM_PGSODIUM.md
+```
+
 ## 🚀 Comandos Rápidos
 
 Cuando el usuario diga:
+- **"procesa inbox"** → Procesar automáticamente todos los archivos del INBOX
 - **"organiza"** → Revisar estructura completa y reorganizar
 - **"actualiza readme"** → Regenerar README.md con archivos actuales
 - **"limpia proyecto"** → Eliminar archivos vacíos y reorganizar
+- **"analiza [archivo]"** → Analizar un archivo específico antes de moverlo
 - **"nuevo archivo [nombre]"** → Ubicar y renombrar según contenido
 
 ## 🎨 Estilo de Comunicación
