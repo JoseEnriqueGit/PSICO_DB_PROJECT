@@ -96,6 +96,18 @@ PSICO_DB_PROJECT/
 
 ---
 
+## 🤖 Claude Code Agent
+
+Este proyecto incluye un agente especializado para documentación y organización. Ver [CLAUDE.md](CLAUDE.md) para instrucciones detalladas del agente.
+
+**Comandos rápidos:**
+- `organiza` - Revisar y reorganizar estructura completa
+- `actualiza readme` - Regenerar README.md con archivos actuales  
+- `limpia proyecto` - Eliminar archivos vacíos y reorganizar
+- `nuevo archivo [nombre]` - Ubicar y renombrar según contenido
+
+---
+
 ## Integración con Supabase
 
 Para integrar tu sistema con Supabase:
