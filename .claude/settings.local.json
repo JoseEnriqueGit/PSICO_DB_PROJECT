@@ -4,7 +4,12 @@
       "Bash(mkdir:*)",
       "Bash(mv:*)",
       "Bash(rmdir:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(xcopy:*)",
+      "Bash(copy \"📚 DOCUMENTATION\\02_DATABASE\\*.md\" \"📚 DOCS\\ARCHITECTURE\"\")",
+      "Bash(cp:*)",
+      "Bash(true)",
+      "Bash(ls:*)"
     ],
     "deny": []
   }

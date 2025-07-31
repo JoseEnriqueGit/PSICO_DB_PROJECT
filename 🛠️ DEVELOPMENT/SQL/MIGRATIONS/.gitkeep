@@ -1,0 +1,8 @@
+# SQL MIGRATIONS
+
+This directory contains database migration scripts including:
+- Schema changes and updates
+- Data migration scripts
+- Version-specific migrations
+- Rollback procedures
+- Migration testing procedures

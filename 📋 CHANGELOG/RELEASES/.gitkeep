@@ -1,0 +1,8 @@
+# RELEASES Changelog
+
+This directory contains release-specific changelogs including:
+- Version release notes
+- Breaking changes documentation
+- Migration guides between versions
+- Feature deprecation notices
+- Security updates and patches

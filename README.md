@@ -17,50 +17,88 @@ Este proyecto implementa una base de datos segura para una aplicación psicológ
 
 ## 📁 Navegación Rápida - Índice Alfabético
 
-### 📚 Documentación
-#### Base de Datos
-- [Actualización Sistema de Auditoría](📚%20DOCUMENTATION/02_DATABASE/AUDIT_SYSTEM_UPDATE.md)
-- [Catálogos Dinámicos](📚%20DOCUMENTATION/02_DATABASE/DYNAMIC_CATALOGS.md)
-- [Localización Geográfica](📚%20DOCUMENTATION/02_DATABASE/GEOGRAPHIC_LOCALIZATION.md)
+### 📚 Documentación Técnica
+#### 🏗️ Arquitectura del Sistema
+- [Catálogos Dinámicos](📚%20DOCS/ARCHITECTURE/DYNAMIC_CATALOGS.md)
+- [Localización Geográfica](📚%20DOCS/ARCHITECTURE/GEOGRAPHIC_LOCALIZATION.md)
+- [Sistema de Auditoría](📚%20DOCS/ARCHITECTURE/AUDIT_SYSTEM_UPDATE.md)
 
-#### Análisis de Bugs
-- [Trigger handle_new_user Bug Analysis](📚%20DOCUMENTATION/05_BUG_ANALYSIS/TRIGGER_BUG_ANALYSIS_HANDLE_NEW_USER.md)
+#### ⭐ Documentación de Features
+- [Sistema de Gestión de Usuarios](📚%20DOCS/FEATURES/USER_MANAGEMENT_SOFT_DELETE_SYSTEM.md)
+- [Template para Features](📚%20DOCS/FEATURES/TEMPLATE.md)
 
-### 🛠️ Desarrollo - Scripts SQL
-#### Funciones
-- [AllFunctionScripts.sql](🛠️%20DEVELOPMENT/SQL_SCRIPTS/FUNCTIONS/AllFunctionScripts.sql)
+#### 📖 API y Operaciones
+- *Pendiente*: Documentación de API
+- *Pendiente*: Guías de deployment
+- *Pendiente*: Troubleshooting
 
-#### Tablas
-- [address_types.sql](🛠️%20DEVELOPMENT/SQL_SCRIPTS/TABLES/address_types.sql)
-- [AllTablesScripts.sql](🛠️%20DEVELOPMENT/SQL_SCRIPTS/TABLES/AllTablesScripts.sql)
-- [attachment_types.sql](🛠️%20DEVELOPMENT/SQL_SCRIPTS/TABLES/attachment_types.sql)
-- [email_types.sql](🛠️%20DEVELOPMENT/SQL_SCRIPTS/TABLES/email_types.sql)
-- [job_statuses.sql](🛠️%20DEVELOPMENT/SQL_SCRIPTS/TABLES/job_statuses.sql)
-- [marital_statuses.sql](🛠️%20DEVELOPMENT/SQL_SCRIPTS/TABLES/marital_statuses.sql)
-- [phone_types.sql](🛠️%20DEVELOPMENT/SQL_SCRIPTS/TABLES/phone_types.sql)
-- [TEMPORAL.sql](🛠️%20DEVELOPMENT/SQL_SCRIPTS/TABLES/TEMPORAL.sql)
+---
 
-### 🤖 Recursos de IA
-- [Recomendaciones de BD](🤖%20AI_RESOURCES/PROMPTS/DATABASE_DESIGN/DB_RECOMMENDATIONS.md)
-- [Prompt Gemini DBA](🤖%20AI_RESOURCES/PROMPTS/DATABASE_DESIGN/GEMINI_DBA_PROMPT.md)
+### 🐛 Gestión de Issues y Problemas
+#### 🚨 Bugs Activos
+- *Sin bugs activos reportados*
 
-### 📝 Gestión del Proyecto
-- [Historial de Ideas y Cambios](📝%20PROJECT_MANAGEMENT/IDEAS_AND_CHANGES_HISTORY.md)
+#### ✅ Bugs Resueltos
+- [2024-07-31: Fix Trigger handle_new_user](🐛%20ISSUES/BUGS/RESOLVED/TRIGGER_BUG_ANALYSIS_HANDLE_NEW_USER.md)
 
-### 📋 Referencias
-#### Sistema de Auditoría
-- [Diseño del Sistema de Auditoría](📋%20REFERENCES/AUDIT/AUDIT_SYSTEM_DESIGN.md)
-- [Política de Retención de Datos](📋%20REFERENCES/AUDIT/DATA_RETENTION_POLICY.md)
+#### 💡 Mejoras Solicitadas
+- *Sin mejoras pendientes*
 
-#### Diseños de Tablas
-- [education_levels](📋%20REFERENCES/AUDIT/TABLE_DESIGNS/education_levels.md)
-- [marital_statuses](📋%20REFERENCES/AUDIT/TABLE_DESIGNS/marital_statuses.md)
-- [occupations](📋%20REFERENCES/AUDIT/TABLE_DESIGNS/occupations.md)
-- [phone_types](📋%20REFERENCES/AUDIT/TABLE_DESIGNS/phone_types.md)
-- [user_roles](📋%20REFERENCES/AUDIT/TABLE_DESIGNS/user_roles.md)
+#### 🔧 Deuda Técnica
+- *Pendiente de identificar*
 
-#### Roles de Usuario
-- [Descripción de Roles de Usuario](📋%20REFERENCES/USER_ROLES/USER_ROLES_DESCRIPTION.md)
+#### 📋 Templates para Issues
+- [Template para Bug Reports](🐛%20ISSUES/BUGS/TEMPLATE.md)
+- [Template para Mejoras](🐛%20ISSUES/ENHANCEMENTS/TEMPLATE.md)
+
+---
+
+### 📋 Control de Versiones y Cambios
+#### 🚀 Releases
+- [Template para Releases](📋%20CHANGELOG/RELEASES/TEMPLATE.md)
+- *Pendiente*: Primera release
+
+#### ⭐ Historial de Features
+- [2024-07-31: Reestructuración del Proyecto](📋%20CHANGELOG/FEATURES/IDEAS_AND_CHANGES_HISTORY.md)
+
+#### 🚑 Hotfixes
+- *Sin hotfixes aplicados*
+
+---
+
+### 🛠️ Recursos de Desarrollo
+#### ⚙️ Scripts SQL - Funciones
+- [AllFunctionScripts.sql](🛠️%20DEVELOPMENT/SQL/FUNCTIONS/AllFunctionScripts.sql)
+
+#### 🗄️ Scripts SQL - Esquemas
+- [address_types.sql](🛠️%20DEVELOPMENT/SQL/SCHEMA/address_types.sql)
+- [AllTablesScripts.sql](🛠️%20DEVELOPMENT/SQL/SCHEMA/AllTablesScripts.sql)
+- [attachment_types.sql](🛠️%20DEVELOPMENT/SQL/SCHEMA/attachment_types.sql)
+- [email_types.sql](🛠️%20DEVELOPMENT/SQL/SCHEMA/email_types.sql)
+- [job_statuses.sql](🛠️%20DEVELOPMENT/SQL/SCHEMA/job_statuses.sql)
+- [marital_statuses.sql](🛠️%20DEVELOPMENT/SQL/SCHEMA/marital_statuses.sql)
+- [phone_types.sql](🛠️%20DEVELOPMENT/SQL/SCHEMA/phone_types.sql)
+- [TEMPORAL.sql](🛠️%20DEVELOPMENT/SQL/SCHEMA/TEMPORAL.sql)
+
+#### 🔄 Migraciones
+- *Pendiente*: Scripts de migración
+
+#### 🌱 Seeds y Datos Iniciales
+- *Pendiente*: Datos de prueba
+
+---
+
+### 🤖 Recursos de IA y Automatización
+#### 🎯 Prompts por Categoría
+- **Code Review**: *Pendiente*
+- **Debugging**: *Pendiente*  
+- **Documentation**: *Pendiente*
+- **Feature Development**:
+  - [Recomendaciones de BD](🤖%20AI_RESOURCES/PROMPTS/FEATURE_DEVELOPMENT/DB_RECOMMENDATIONS.md)
+  - [Prompt Gemini DBA](🤖%20AI_RESOURCES/PROMPTS/FEATURE_DEVELOPMENT/GEMINI_DBA_PROMPT.md)
+
+#### 📝 Templates para IA
+- *Pendiente*: Templates de prompts
 
 ---
 
@@ -68,32 +106,66 @@ Este proyecto implementa una base de datos segura para una aplicación psicológ
 
 ```
 PSICO_DB_PROJECT/
-├── 📥 INBOX/                           # ¡NUEVO! Bandeja de entrada automática
-├── 📚 DOCUMENTATION/                    # Documentación técnica
-│   ├── 02_DATABASE/                    # Documentación de base de datos
-│   └── 05_BUG_ANALYSIS/               # Análisis de bugs y debugging
-├── 🛠️ DEVELOPMENT/SQL_SCRIPTS/           # Scripts SQL organizados
-│   ├── FUNCTIONS/                      # Funciones de BD
-│   └── TABLES/                        # Definiciones de tablas
-├── 🤖 AI_RESOURCES/PROMPTS/             # Prompts para desarrollo con IA
-├── 📝 PROJECT_MANAGEMENT/               # Gestión del proyecto
-└── 📋 REFERENCES/                      # Material de referencia
-    ├── AUDIT/                          # Documentación de auditoría
-    └── USER_ROLES/                     # Información de roles
+├── 📥 INBOX/                           # Bandeja de entrada automática
+├── 📚 DOCS/                           # Documentación centralizada
+│   ├── ARCHITECTURE/                  # Arquitectura del sistema
+│   ├── FEATURES/                      # Documentación de características
+│   ├── OPERATIONS/                    # Deployment y operaciones
+│   ├── TROUBLESHOOTING/              # Resolución de problemas
+│   └── API/                          # Documentación de API
+├── 📋 CHANGELOG/                      # Control de cambios
+│   ├── RELEASES/                     # Notas de versiones
+│   ├── FEATURES/                     # Historial de features
+│   └── HOTFIXES/                     # Fixes críticos
+├── 🐛 ISSUES/                        # Gestión de problemas
+│   ├── BUGS/                         # Reportes de bugs
+│   ├── ENHANCEMENTS/                 # Solicitudes de mejoras
+│   └── TECHNICAL_DEBT/               # Deuda técnica
+├── 🛠️ DEVELOPMENT/                    # Recursos de desarrollo
+│   ├── SQL/                          # Scripts organizados
+│   ├── SCRIPTS/                      # Automatización
+│   ├── CONFIGS/                      # Configuraciones
+│   └── TOOLS/                        # Herramientas
+└── 🤖 AI_RESOURCES/                   # Recursos para IA
+    ├── PROMPTS/                      # Prompts categorizados
+    └── TEMPLATES/                    # Plantillas
 ```
 
 ---
 
-## 🚀 Enlaces de Acceso Rápido
+## 🚀 Enlaces de Acceso Rápido por Categoría
 
-| Categoria | Archivo | Descripción |
-|-----------|---------|-------------|
-| 🔍 **Auditoría** | [Sistema de Auditoría](📚%20DOCUMENTATION/02_DATABASE/AUDIT_SYSTEM_UPDATE.md) | Implementación del sistema de auditoría |
-| 🐛 **Debugging** | [Bug Analysis - Triggers](📚%20DOCUMENTATION/05_BUG_ANALYSIS/TRIGGER_BUG_ANALYSIS_HANDLE_NEW_USER.md) | Análisis y solución de bug en triggers |
-| 💾 **Base de Datos** | [Scripts Completos](🛠️%20DEVELOPMENT/SQL_SCRIPTS/TABLES/AllTablesScripts.sql) | Todas las definiciones de tablas |
-| ⚙️ **Funciones** | [Scripts de Funciones](🛠️%20DEVELOPMENT/SQL_SCRIPTS/FUNCTIONS/AllFunctionScripts.sql) | Funciones de base de datos |
-| 🤖 **IA** | [Recomendaciones](🤖%20AI_RESOURCES/PROMPTS/DATABASE_DESIGN/DB_RECOMMENDATIONS.md) | Mejores prácticas para IA |
-| 👥 **Usuarios** | [Roles de Usuario](📋%20REFERENCES/USER_ROLES/USER_ROLES_DESCRIPTION.md) | Definición de roles del sistema |
+### 📚 **Documentación Principal**
+| Tipo | Archivo | Descripción |
+|------|---------|-------------|
+| 🏗️ **Arquitectura** | [Sistema de Auditoría](📚%20DOCS/ARCHITECTURE/AUDIT_SYSTEM_UPDATE.md) | Implementación del sistema de auditoría |
+| ⭐ **Features** | [Gestión de Usuarios](📚%20DOCS/FEATURES/USER_MANAGEMENT_SOFT_DELETE_SYSTEM.md) | Sistema completo con soft delete |
+| 📖 **Templates** | [Feature Template](📚%20DOCS/FEATURES/TEMPLATE.md) | Plantilla para documentación de features |
+
+### 🐛 **Gestión de Issues**
+| Tipo | Archivo | Descripción |
+|------|---------|-------------|
+| ✅ **Bug Resuelto** | [Trigger Fix](🐛%20ISSUES/BUGS/RESOLVED/TRIGGER_BUG_ANALYSIS_HANDLE_NEW_USER.md) | Análisis y solución de bug en triggers |
+| 📋 **Templates** | [Bug Template](🐛%20ISSUES/BUGS/TEMPLATE.md) | Plantilla para reportes de bugs |
+| 💡 **Templates** | [Enhancement Template](🐛%20ISSUES/ENHANCEMENTS/TEMPLATE.md) | Plantilla para solicitudes de mejoras |
+
+### 📋 **Control de Cambios**
+| Tipo | Archivo | Descripción |
+|------|---------|-------------|
+| ⭐ **Feature** | [Reestructuración](📋%20CHANGELOG/FEATURES/IDEAS_AND_CHANGES_HISTORY.md) | Historial de reestructuración del proyecto |
+| 🚀 **Template** | [Release Template](📋%20CHANGELOG/RELEASES/TEMPLATE.md) | Plantilla para notas de release |
+
+### 🛠️ **Desarrollo**
+| Tipo | Archivo | Descripción |
+|------|---------|-------------|
+| 💾 **Esquemas** | [Scripts Completos](🛠️%20DEVELOPMENT/SQL/SCHEMA/AllTablesScripts.sql) | Todas las definiciones de tablas |
+| ⚙️ **Funciones** | [Scripts de Funciones](🛠️%20DEVELOPMENT/SQL/FUNCTIONS/AllFunctionScripts.sql) | Funciones de base de datos |
+
+### 🤖 **Recursos de IA**
+| Tipo | Archivo | Descripción |
+|------|---------|-------------|
+| 🎯 **Prompts** | [Recomendaciones BD](🤖%20AI_RESOURCES/PROMPTS/FEATURE_DEVELOPMENT/DB_RECOMMENDATIONS.md) | Mejores prácticas para IA |
+| 🎯 **Prompts** | [Gemini DBA](🤖%20AI_RESOURCES/PROMPTS/FEATURE_DEVELOPMENT/GEMINI_DBA_PROMPT.md) | Prompts especializados para BD |
 
 ---
 

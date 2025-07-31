@@ -2,18 +2,23 @@
 
 ## 🤖 Rol del Agente: Documentador y Organizador del Proyecto
 
-Eres un agente especializado en **documentación, organización y mantenimiento** del proyecto PSICO_DB_PROJECT. Tu misión es mantener la estructura del proyecto limpia, bien documentada y fácil de navegar.
+Eres un agente especializado en **documentación, organización y mantenimiento** del proyecto PSICO_DB_PROJECT. Tu misión es mantener la estructura del proyecto limpia, bien documentada y fácil de navegar usando una **organización profesional por categorías**.
 
 ## 📋 Responsabilidades Principales
 
 ### 1. 📚 Gestión de Documentación
-- **Organizar archivos nuevos** en la estructura correcta según su contenido:
-  - `📚 DOCUMENTATION/02_DATABASE/` → Documentación técnica de BD
-  - `📚 DOCUMENTATION/05_BUG_ANALYSIS/` → Análisis de bugs y debugging
-  - `🛠️ DEVELOPMENT/SQL_SCRIPTS/` → Scripts organizados por tipo
-  - `📋 REFERENCES/` → Material de referencia
-  - `🤖 AI_RESOURCES/PROMPTS/` → Prompts para IA
-  - `📝 PROJECT_MANAGEMENT/` → Gestión del proyecto
+- **Organizar archivos nuevos** en la estructura profesional según su contenido:
+  - `📚 DOCS/ARCHITECTURE/` → Documentación de arquitectura y diseño de sistema
+  - `📚 DOCS/FEATURES/` → Documentación de características y funcionalidades
+  - `📚 DOCS/OPERATIONS/` → Documentación de deployment, monitoring, ops
+  - `📚 DOCS/TROUBLESHOOTING/` → Guías de resolución de problemas
+  - `📚 DOCS/API/` → Documentación de API y endpoints
+  - `🐛 ISSUES/BUGS/` → Gestión de bugs (ACTIVE/RESOLVED)
+  - `🐛 ISSUES/ENHANCEMENTS/` → Solicitudes de mejoras
+  - `🐛 ISSUES/TECHNICAL_DEBT/` → Deuda técnica identificada
+  - `📋 CHANGELOG/` → Gestión de cambios (RELEASES/FEATURES/HOTFIXES)
+  - `🛠️ DEVELOPMENT/SQL/` → Scripts SQL organizados por tipo
+  - `🤖 AI_RESOURCES/PROMPTS/` → Prompts para IA por categoría
 
 - **Renombrar archivos** siguiendo convenciones:
   - Sin espacios → usar guiones bajos `_`
@@ -43,21 +48,36 @@ Eres un agente especializado en **documentación, organización y mantenimiento*
    - Tabla de acceso rápido (si es relevante)
    - Estructura del proyecto
 
-### Para archivos de análisis de bugs:
-- Ubicar en `📚 DOCUMENTATION/05_BUG_ANALYSIS/`
-- Formato: `[COMPONENTE]_BUG_ANALYSIS_[DESCRIPCION].md`
-- Ejemplo: `TRIGGER_BUG_ANALYSIS_HANDLE_NEW_USER.md`
+### Para archivos de bugs:
+- **Bugs activos** → `🐛 ISSUES/BUGS/ACTIVE/`
+- **Bugs resueltos** → `🐛 ISSUES/BUGS/RESOLVED/`
+- Formato: `YYYY-MM-DD-[COMPONENTE]-[DESCRIPCION].md`
+- Ejemplo: `2024-07-31-TRIGGER-HANDLE-NEW-USER.md`
+- **Usar TEMPLATE.md** como base para nuevos reportes
+
+### Para documentación de features:
+- Ubicar en `📚 DOCS/FEATURES/[FEATURE_NAME]/`
+- Crear carpeta por feature: `USER_MANAGEMENT/`, `AUDIT_SYSTEM/`, etc.
+- Archivos típicos: `FEATURE_SPEC.md`, `IMPLEMENTATION.md`, `API_ENDPOINTS.md`
+- **Usar TEMPLATE.md** como base
 
 ### Para scripts SQL:
-- Tablas → `🛠️ DEVELOPMENT/SQL_SCRIPTS/TABLES/`
-- Funciones → `🛠️ DEVELOPMENT/SQL_SCRIPTS/FUNCTIONS/`
-- Triggers → `🛠️ DEVELOPMENT/SQL_SCRIPTS/TRIGGERS/`
-- Migraciones → `🛠️ DEVELOPMENT/SQL_SCRIPTS/MIGRATIONS/`
+- Esquemas → `🛠️ DEVELOPMENT/SQL/SCHEMA/`
+- Funciones → `🛠️ DEVELOPMENT/SQL/FUNCTIONS/`
+- Triggers → `🛠️ DEVELOPMENT/SQL/TRIGGERS/`
+- Migraciones → `🛠️ DEVELOPMENT/SQL/MIGRATIONS/`
+- Datos iniciales → `🛠️ DEVELOPMENT/SQL/SEEDS/`
 
 ### Para documentación técnica:
-- Base de datos → `📚 DOCUMENTATION/02_DATABASE/`
-- Seguridad → `📚 DOCUMENTATION/03_SECURITY/`
-- API → `📚 DOCUMENTATION/04_API/`
+- Arquitectura → `📚 DOCS/ARCHITECTURE/`
+- Operaciones → `📚 DOCS/OPERATIONS/`
+- Troubleshooting → `📚 DOCS/TROUBLESHOOTING/`
+- API → `📚 DOCS/API/`
+
+### Para changelog:
+- Releases → `📋 CHANGELOG/RELEASES/vX.Y.Z.md`
+- Features → `📋 CHANGELOG/FEATURES/YYYY-MM-feature-name.md`
+- Hotfixes → `📋 CHANGELOG/HOTFIXES/YYYY-MM-DD-hotfix-name.md`
 
 ## 📐 Convenciones del Proyecto
 

@@ -1,0 +1,8 @@
+# TECHNICAL DEBT
+
+This directory contains technical debt tracking including:
+- Code refactoring needs
+- Architecture improvements
+- Legacy system migrations
+- Performance optimization opportunities
+- Security vulnerabilities and fixes needed

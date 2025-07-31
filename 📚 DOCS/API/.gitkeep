@@ -1,0 +1,9 @@
+# API Documentation
+
+This directory contains API-related documentation including:
+- REST API endpoints specification
+- GraphQL schema documentation
+- Authentication and authorization guides
+- Rate limiting policies
+- API versioning strategy
+- Client SDKs and examples

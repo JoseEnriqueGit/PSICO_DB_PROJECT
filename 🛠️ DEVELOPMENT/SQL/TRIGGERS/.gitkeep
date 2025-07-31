@@ -1,0 +1,8 @@
+# SQL TRIGGERS
+
+This directory contains database trigger definitions including:
+- Audit triggers
+- Business logic triggers
+- Data validation triggers
+- Soft delete triggers
+- Performance optimization triggers

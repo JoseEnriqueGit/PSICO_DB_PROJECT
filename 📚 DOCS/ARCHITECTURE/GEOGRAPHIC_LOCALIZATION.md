@@ -160,12 +160,6 @@ VALUES (
     'DO.32.05.S08.P011', -- País.Prov.Mun.Sección.Paraje
     NULL
 );
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-SQL
-IGNORE_WHEN_COPYING_END
 
 Insertar un nuevo Barrio "Invivienda" (código 020) en el Municipio Santo Domingo Este (01):
 
@@ -177,12 +171,6 @@ VALUES (
     'DO.32.01.B020', -- País.Prov.Mun.Barrio
     NULL
 );
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-SQL
-IGNORE_WHEN_COPYING_END
 
 Consideraciones Importantes:
 

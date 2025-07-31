@@ -9,7 +9,7 @@ A continuación se describe de forma ordenada y sintética cada uno de los cambi
 ### 1.1. Tabla `util.catalog_fk_map`
 
 * **¿Qué es?**
-  Una tabla auxiliar que mapea cada columna “\*\_item\_id” en tablas de negocio al `type_code` esperado en `catalog_types`.
+  Una tabla auxiliar que mapea cada columna "\*\_item\_id" en tablas de negocio al `type_code` esperado en `catalog_types`.
 
 * **Estructura principal:**
 
@@ -23,10 +23,10 @@ A continuación se describe de forma ordenada y sintética cada uno de los cambi
   );
   ```
 
-  * `schema_name`   → nombre del esquema (p. ej. “public”).
-  * `table_name`    → nombre de la tabla de negocio (p. ej. “user\_emails”).
-  * `column_name`   → nombre de la columna que apunta a `catalog_items.id` (p. ej. “email\_type\_id”).
-  * `type_code`     → identificador corto de catálogo en `catalog_types` (p. ej. “email\_type”).
+  * `schema_name`   → nombre del esquema (p. ej. "public").
+  * `table_name`    → nombre de la tabla de negocio (p. ej. "user\_emails").
+  * `column_name`   → nombre de la columna que apunta a `catalog_items.id` (p. ej. "email\_type\_id").
+  * `type_code`     → identificador corto de catálogo en `catalog_types` (p. ej. "email\_type").
 
 * **Propósito:**
   Conocer de antemano qué columnas de qué tablas deben apuntar a cada `catalog_type`, de modo que la función/triggers de validación consulte `util.catalog_fk_map` y sepa qué `type_code` validar en tiempo de INSERT/UPDATE.
@@ -38,7 +38,7 @@ A continuación se describe de forma ordenada y sintética cada uno de los cambi
   VALUES
     ('public','user_emails', 'email_type_id',    'email_type'),
     ('public','user_phones', 'phone_type_id',    'phone_type'),
-    ('public','catalog_item_translations','catalog_item_id','__ANY__') -- “__ANY__” permite traducciones libres
+    ('public','catalog_item_translations','catalog_item_id','__ANY__') -- "__ANY__" permite traducciones libres
   ON CONFLICT (schema_name, table_name, column_name) DO NOTHING;
   ```
 
@@ -99,11 +99,11 @@ A continuación se describe de forma ordenada y sintética cada uno de los cambi
 
   * **Parámetros (`TG_ARGV`):**
 
-    * `TG_ARGV[0]` → `type_code` esperado (p. ej. ‘gender’, ‘email\_type’).
-    * `TG_ARGV[1]` → el nombre de la columna que recibe el ID (p. ej. ‘gender\_id’, ‘email\_type\_id’).
+    * `TG_ARGV[0]` → `type_code` esperado (p. ej. 'gender', 'email\_type').
+    * `TG_ARGV[1]` → el nombre de la columna que recibe el ID (p. ej. 'gender\_id', 'email\_type\_id').
 
 * **Propósito:**
-  Cada vez que se intenta insertar o actualizar una fila en alguna tabla de negocio que tenga una columna “\*\_item\_id”, el trigger asociado invoca esta función, que:
+  Cada vez que se intenta insertar o actualizar una fila en alguna tabla de negocio que tenga una columna "\*\_item\_id", el trigger asociado invoca esta función, que:
 
   1. Busca el `catalog_type_id` en `catalog_types` según el `type_code`.
   2. Obtiene de `NEW.<columna>` el UUID del item.
@@ -120,14 +120,14 @@ Por cada columna que apunta a un catálogo, se creó un `TRIGGER` que ejecuta la
 
   ```sql
   -- 1) Trigger function ya creada: util.validate_catalog_item_type()
-  -- 2) Crear el trigger apuntando a los argumentos (‘email_type’, ‘email_type_id’):
+  -- 2) Crear el trigger apuntando a los argumentos ('email_type', 'email_type_id'):
   CREATE TRIGGER validate_user_emails_email_type
   BEFORE INSERT OR UPDATE ON public.user_emails
   FOR EACH ROW
   EXECUTE FUNCTION util.validate_catalog_item_type('email_type','email_type_id');
   ```
 
-* **Replicar para cada columna “\*\_item\_id” mapeada en `util.catalog_fk_map`:**
+* **Replicar para cada columna "\*\_item\_id" mapeada en `util.catalog_fk_map`:**
 
   ```sql
   -- user_phones.phone_type_id → type_code = 'phone_type'
@@ -152,7 +152,7 @@ Por cada columna que apunta a un catálogo, se creó un `TRIGGER` que ejecuta la
 ### 2.1. Tablas Principales
 
 1. **`catalog_types`**
-   Catalogo de “tipos de catálogo”.
+   Catalogo de "tipos de catálogo".
 
    * Columnas principales:
 
@@ -246,7 +246,7 @@ END $$;
 ```
 
 * Cada iteración crea o reemplaza una vista, p. ej. `vw_catalog_gender`, `vw_catalog_phone_type`, `vw_catalog_email_type`, etc.
-* El filtro `ci.is_deleted = false` garantiza que solo los valores “activos” aparezcan.
+* El filtro `ci.is_deleted = false` garantiza que solo los valores "activos" aparezcan.
 * **Ejemplo resultante:**
 
   ```sql
@@ -353,7 +353,7 @@ Para garantizar que la capa de aplicación solo pueda **consultar** (no modifica
   ```sql
   CREATE ROLE app_user LOGIN PASSWORD '⟨tu_contraseña_segura⟩';
   ```
-* En nuestro ejemplo, la consola de Supabase ya provee un rol “anon” o similar; basta con asignarle permisos. Pero si no existe, hay que crearlo explícitamente.
+* En nuestro ejemplo, la consola de Supabase ya provee un rol "anon" o similar; basta con asignarle permisos. Pero si no existe, hay que crearlo explícitamente.
 
 ### 5.2. GRANT SELECT en Tablas de Catálogo
 
@@ -389,7 +389,7 @@ TO app_user;
   TO app_user;
   ```
 
-  * Si no queremos abrir “todas” las vistas, podemos enumerar solo las vistas de catálogo.
+  * Si no queremos abrir "todas" las vistas, podemos enumerar solo las vistas de catálogo.
 
 ### 5.4. Verificación de Permisos
 
@@ -406,7 +406,7 @@ SELECT * FROM public.vw_catalog_gender LIMIT 3;
 
 -- Prueba de INSERT (debe fallar):
 INSERT INTO public.catalog_types (id, type_code, description)
-VALUES (gen_random_uuid(), 'dummy', 'Prueba'); -- debe arrojar “permission denied”
+VALUES (gen_random_uuid(), 'dummy', 'Prueba'); -- debe arrojar "permission denied"
 
 RESET ROLE;    -- volver al rol original
 ```
@@ -480,7 +480,7 @@ A partir de ahora, cuando se necesite incorporar un **nuevo catálogo dinámico*
      (gen_random_uuid(), v_type_id, 'BANK', 'Transferencia bancaria', false);
    ```
 
-3. **Mapear la nueva columna “\*\_item\_id”** en `util.catalog_fk_map`
+3. **Mapear la nueva columna "\*\_item\_id"** en `util.catalog_fk_map`
    Supongamos que existe la tabla `user_payments` con columna `payment_method_id`:
 
    ```sql
@@ -584,7 +584,7 @@ Para asegurar que futuras migraciones o cambios no rompan la integridad:
      ```
 
 2. **Chequeo SQL de Integridad General**
-   Un script que detecte columnas “\*\_item\_id” que no estén mapeadas o que referencien IDs inexistentes:
+   Un script que detecte columnas "\*\_item\_id" que no estén mapeadas o que referencien IDs inexistentes:
 
    ```sql
    -- 8.1. Columnas *_item_id sin mapear en util.catalog_fk_map
@@ -605,7 +605,7 @@ Para asegurar que futuras migraciones o cambios no rompan la integridad:
    WHERE m.column_name IS NULL;
    ```
 
-   * Debe devolver 0 filas (significa que todas las columnas “\*\_item\_id” están mapeadas).
+   * Debe devolver 0 filas (significa que todas las columnas "\*\_item\_id" están mapeadas).
 
    ```sql
    -- 8.2. Chequear valores inválidos directos (sin pasar por trigger)
@@ -650,10 +650,10 @@ Al finalizar los cambios, estos son los **objetos principales** y sus finalidade
 | **Tabla `catalog_types`**                       | Define cada tipo de catálogo (p. ej. gender, email\_type, phone\_type, etc.).                              |
 | **Tabla `catalog_items`**                       | Contiene los valores de cada tipo de catálogo (vinculado a `catalog_types`).                               |
 | **Tabla `catalog_item_translations`**           | Guarda traducciones multi-idioma de cada `catalog_items`.                                                  |
-| **Tabla `util.catalog_fk_map`**                 | Mapea cada columna “\*\_item\_id” en tablas de negocio al `type_code` que debe validar la FK.              |
-| **Función `util.validate_catalog_item_type()`** | Permite validar, en triggers, que un ID en una columna “\*\_item\_id” corresponda al `type_code` adecuado. |
-| **Triggers en tablas de negocio**               | Invocan la función de validación antes de INSERT/UPDATE para cada columna “\*\_item\_id”.                  |
-| **Vistas `vw_catalog_<type_code>`**             | Vistas de solo lectura que exponen los valores “activos” de cada catálogo junto con sus traducciones.      |
+| **Tabla `util.catalog_fk_map`**                 | Mapea cada columna "\*\_item\_id" en tablas de negocio al `type_code` que debe validar la FK.              |
+| **Función `util.validate_catalog_item_type()`** | Permite validar, en triggers, que un ID en una columna "\*\_item\_id" corresponda al `type_code` adecuado. |
+| **Triggers en tablas de negocio**               | Invocan la función de validación antes de INSERT/UPDATE para cada columna "\*\_item\_id".                  |
+| **Vistas `vw_catalog_<type_code>`**             | Vistas de solo lectura que exponen los valores "activos" de cada catálogo junto con sus traducciones.      |
 | **Índice `idx_catalog_items_type_code`**        | Índice (catalog\_type\_id, code) para acelerar filtros basados en tipo y código.                           |
 | **Índice GIN `idx_cit_tr_name`**                | Índice de texto completo sobre `catalog_item_translations.translated_name` para búsquedas rápidas.         |
 | **Rol `app_user`**                              | Rol al que se le concedieron permisos de SELECT sobre tablas y vistas de catálogos para lectura segura.    |
@@ -673,7 +673,7 @@ Con estos cambios:
 
 **Próximos pasos recomendados**:
 
-* **Revisar periódicamente** (por ejemplo, en cada despliegue) que las columnas “\*\_item\_id” nuevas se agreguen a `util.catalog_fk_map` y que se creen sus triggers correspondientes.
+* **Revisar periódicamente** (por ejemplo, en cada despliegue) que las columnas "\*\_item\_id" nuevas se agreguen a `util.catalog_fk_map` y que se creen sus triggers correspondientes.
 * **Ejecutar pruebas automáticas** (pgTAP o SQL) tras cada migración de esquema para validar que no hay filas huérfanas ni permisos rotos.
 * **Mantener un registro** (changelog) de todos los `type_code` nuevos y de los triggers asociados para facilitar auditorías y futuras modificaciones.
 * **Documentar en el repositorio** los cinco pasos para agregar un nuevo catálogo (sección 7 de este documento), de modo que cualquier miembro del equipo sepa exactamente qué scripts ejecutar.
