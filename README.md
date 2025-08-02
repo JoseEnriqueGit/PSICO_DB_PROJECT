@@ -24,6 +24,7 @@ Este proyecto implementa una base de datos segura para una aplicación psicológ
 - [Sistema de Auditoría](📚%20DOCS/ARCHITECTURE/AUDIT_SYSTEM_UPDATE.md)
 
 #### ⭐ Documentación de Features
+- [Implementación MVP Historia Clínica](📚%20DOCS/FEATURES/MVP_CLINICAL_RECORDS_IMPLEMENTATION.md)
 - [Sistema de Gestión de Usuarios](📚%20DOCS/FEATURES/USER_MANAGEMENT_SOFT_DELETE_SYSTEM.md)
 - [Template para Features](📚%20DOCS/FEATURES/TEMPLATE.md)
 
@@ -139,6 +140,7 @@ PSICO_DB_PROJECT/
 | Tipo | Archivo | Descripción |
 |------|---------|-------------|
 | 🏗️ **Arquitectura** | [Sistema de Auditoría](📚%20DOCS/ARCHITECTURE/AUDIT_SYSTEM_UPDATE.md) | Implementación del sistema de auditoría |
+| ⭐ **Features** | [MVP Historia Clínica](📚%20DOCS/FEATURES/MVP_CLINICAL_RECORDS_IMPLEMENTATION.md) | Documentación completa del MVP implementado |
 | ⭐ **Features** | [Gestión de Usuarios](📚%20DOCS/FEATURES/USER_MANAGEMENT_SOFT_DELETE_SYSTEM.md) | Sistema completo con soft delete |
 | 📖 **Templates** | [Feature Template](📚%20DOCS/FEATURES/TEMPLATE.md) | Plantilla para documentación de features |
 
