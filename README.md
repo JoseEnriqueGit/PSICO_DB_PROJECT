@@ -19,9 +19,12 @@ Este proyecto implementa una base de datos segura para una aplicación psicológ
 
 ### 📚 Documentación Técnica
 #### 🏗️ Arquitectura del Sistema
-- [Catálogos Dinámicos](📚%20DOCS/ARCHITECTURE/DYNAMIC_CATALOGS.md)
-- [Localización Geográfica](📚%20DOCS/ARCHITECTURE/GEOGRAPHIC_LOCALIZATION.md)
-- [Sistema de Auditoría](📚%20DOCS/ARCHITECTURE/AUDIT_SYSTEM_UPDATE.md)
+- **Base de Datos**
+  - [Catálogos Dinámicos](📚%20DOCS/ARCHITECTURE/DATABASE/DYNAMIC_CATALOGS.md)
+  - [Localización Geográfica](📚%20DOCS/ARCHITECTURE/DATABASE/GEOGRAPHIC_LOCALIZATION.md)
+  - [Sistema de Auditoría](📚%20DOCS/ARCHITECTURE/DATABASE/AUDIT_SYSTEM_UPDATE.md)
+- **Aplicación Flutter**
+  - *Pendiente de documentación*
 
 #### ⭐ Documentación de Features
 - [Implementación MVP Historia Clínica](📚%20DOCS/FEATURES/MVP_CLINICAL_RECORDS_IMPLEMENTATION.md)
@@ -62,10 +65,16 @@ Este proyecto implementa una base de datos segura para una aplicación psicológ
 - *Pendiente*: Primera release
 
 #### ⭐ Historial de Features
-- [2024-07-31: Reestructuración del Proyecto](📋%20CHANGELOG/FEATURES/IDEAS_AND_CHANGES_HISTORY.md)
+- **Base de Datos**
+  - [2024-07-31: Reestructuración del Proyecto](📋%20CHANGELOG/DATABASE/FEATURES/IDEAS_AND_CHANGES_HISTORY.md)
+- **Aplicación Flutter**
+  - *Sin historial de features*
 
 #### 🚑 Hotfixes
-- *Sin hotfixes aplicados*
+- **Base de Datos**
+  - *Sin hotfixes aplicados*
+- **Aplicación Flutter**
+  - *Sin hotfixes aplicados*
 
 ---
 
@@ -112,14 +121,20 @@ PSICO_DB_PROJECT/
 ├── 📥 INBOX/                           # Bandeja de entrada automática
 ├── 📚 DOCS/                           # Documentación centralizada
 │   ├── ARCHITECTURE/                  # Arquitectura del sistema
+│   │   ├── DATABASE/                  # Documentación de la Base de Datos
+│   │   └── FLUTTER_APP/               # Documentación de la App Flutter
 │   ├── FEATURES/                      # Documentación de características
 │   ├── OPERATIONS/                    # Deployment y operaciones
 │   ├── TROUBLESHOOTING/              # Resolución de problemas
 │   └── API/                          # Documentación de API
 ├── 📋 CHANGELOG/                      # Control de cambios
-│   ├── RELEASES/                     # Notas de versiones
-│   ├── FEATURES/                     # Historial de features
-│   └── HOTFIXES/                     # Fixes críticos
+│   ├── DATABASE/
+│   │   ├── FEATURES/
+│   │   └── HOTFIXES/
+│   ├── FLUTTER_APP/
+│   │   ├── FEATURES/
+│   │   └── HOTFIXES/
+│   └── RELEASES/                     # Notas de versiones
 ├── 🐛 ISSUES/                        # Gestión de problemas
 │   ├── BUGS/                         # Reportes de bugs
 │   ├── ENHANCEMENTS/                 # Solicitudes de mejoras
@@ -141,7 +156,7 @@ PSICO_DB_PROJECT/
 ### 📚 **Documentación Principal**
 | Tipo | Archivo | Descripción |
 |------|---------|-------------|
-| 🏗️ **Arquitectura** | [Sistema de Auditoría](📚%20DOCS/ARCHITECTURE/AUDIT_SYSTEM_UPDATE.md) | Implementación del sistema de auditoría |
+| 🏗️ **Arquitectura** | [Sistema de Auditoría](📚%20DOCS/ARCHITECTURE/DATABASE/AUDIT_SYSTEM_UPDATE.md) | Implementación del sistema de auditoría |
 | ⭐ **Features** | [MVP Historia Clínica](📚%20DOCS/FEATURES/MVP_CLINICAL_RECORDS_IMPLEMENTATION.md) | Documentación completa del MVP implementado |
 | ⭐ **Features** | [Gestión de Usuarios](📚%20DOCS/FEATURES/USER_MANAGEMENT_SOFT_DELETE_SYSTEM.md) | Sistema completo con soft delete |
 | ⭐ **Features** | [Eliminación Permanente](📚%20DOCS/FEATURES/USER_PERMANENT_DELETION_SYSTEM.md) | Sistema de eliminación definitiva de usuarios |
@@ -157,7 +172,7 @@ PSICO_DB_PROJECT/
 ### 📋 **Control de Cambios**
 | Tipo | Archivo | Descripción |
 |------|---------|-------------|
-| ⭐ **Feature** | [Reestructuración](📋%20CHANGELOG/FEATURES/IDEAS_AND_CHANGES_HISTORY.md) | Historial de reestructuración del proyecto |
+| ⭐ **Feature** | [Reestructuración](📋%20CHANGELOG/DATABASE/FEATURES/IDEAS_AND_CHANGES_HISTORY.md) | Historial de reestructuración del proyecto |
 | 🚀 **Template** | [Release Template](📋%20CHANGELOG/RELEASES/TEMPLATE.md) | Plantilla para notas de release |
 
 ### 🛠️ **Desarrollo**
@@ -174,9 +189,9 @@ PSICO_DB_PROJECT/
 
 ---
 
-## 🤖 Claude Code Agent
+## 🤖 Gemini Agent
 
-Este proyecto incluye un agente especializado para documentación y organización. Ver [CLAUDE.md](CLAUDE.md) para instrucciones detalladas del agente.
+Este proyecto incluye un agente especializado para documentación y organización. Ver [GEMINI.md](GEMINI.md) para instrucciones detalladas del agente.
 
 **Comandos rápidos:**
 - `procesa inbox` - **¡NUEVO!** Procesar archivos de la bandeja de entrada
@@ -187,7 +202,7 @@ Este proyecto incluye un agente especializado para documentación y organizació
 
 ### 📥 Bandeja de Entrada Automática
 
-¿Quieres que Claude Code organice tus archivos automáticamente?
+¿Quieres que Gemini organice tus archivos automáticamente?
 
 1. **Coloca tu archivo** en la carpeta `📥 INBOX/`
 2. **Escribe**: `procesa inbox`
