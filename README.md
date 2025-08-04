@@ -27,6 +27,7 @@ Este proyecto implementa una base de datos segura para una aplicación psicológ
 - [Implementación MVP Historia Clínica](📚%20DOCS/FEATURES/MVP_CLINICAL_RECORDS_IMPLEMENTATION.md)
 - [Sistema de Gestión de Usuarios](📚%20DOCS/FEATURES/USER_MANAGEMENT_SOFT_DELETE_SYSTEM.md)
 - [Sistema de Eliminación Permanente](📚%20DOCS/FEATURES/USER_PERMANENT_DELETION_SYSTEM.md)
+- [Sistema de Eliminación Automática de Terminales](📚%20DOCS/FEATURES/USER_TERMINAL_AUTO_DELETION_SYSTEM.md)
 - [Template para Features](📚%20DOCS/FEATURES/TEMPLATE.md)
 
 #### 📖 API y Operaciones

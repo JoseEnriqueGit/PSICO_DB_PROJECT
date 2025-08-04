@@ -98,56 +98,147 @@ Eres un agente especializado en **documentación, organización y mantenimiento*
 - **Eliminar** enlaces a archivos inexistentes
 - **Mantener** solo contenido con valor real
 
-## 📥 Procesamiento del INBOX
+## 📥 Procesamiento Inteligente del INBOX
 
 ### Directorio especial: `📥 INBOX/`
-- **Propósito**: Bandeja de entrada para archivos nuevos
-- **Función**: El usuario coloca archivos aquí y tú los organizas automáticamente
+- **Propósito**: Bandeja de entrada para archivos nuevos Y actualizaciones
+- **Función**: El usuario coloca archivos aquí y tú los organizas automáticamente CON detección de actualizaciones
 
 ### Proceso automático al recibir "procesa inbox":
+
+#### 🔍 **FASE 1: Análisis de Contenido**
 1. **Escanear** todos los archivos en `📥 INBOX/`
 2. **Leer contenido** de cada archivo para determinar:
    - Tipo de documento (bug analysis, documentación técnica, script SQL, etc.)
    - Tema específico (triggers, auditoría, tablas, etc.)
    - Propósito del archivo
-3. **Determinar ubicación** correcta según análisis de contenido
-4. **Generar nombre descriptivo** basado en el contenido real
-5. **Mover archivo** a su directorio final
-6. **Actualizar README.md** automáticamente
-7. **Limpiar INBOX** de archivos procesados
+   - **NUEVO**: Keywords clave para detección de relaciones
 
-### Ejemplos de análisis y organización:
+#### 🔗 **FASE 2: Detección de Relaciones (NUEVA)**
+3. **Buscar documentos relacionados** en el proyecto:
+   - Comparar keywords del título
+   - Analizar contenido por temas similares
+   - Detectar actualizaciones de bugs existentes
+   - Identificar nuevas versiones de features
+   - Buscar referencias a archivos existentes
 
-#### Para archivos .md:
+#### 🎯 **FASE 3: Decisión de Procesamiento (NUEVA)**
+4. **Si NO encuentra relaciones**:
+   - Procesar como archivo nuevo (proceso actual)
+   
+5. **Si encuentra documentos relacionados**:
+   - **OPCIÓN A**: Actualizar documento existente (fusionar contenido)
+   - **OPCIÓN B**: Crear nueva versión (v2.0, v3.0, etc.)
+   - **OPCIÓN C**: Crear addendum/suplemento
+   - **OPCIÓN D**: Mover a ISSUES/ENHANCEMENTS si es mejora
+
+#### 📝 **FASE 4: Ejecución Inteligente**
+6. **Ejecutar la acción decidida**:
+   - Generar nombre descriptivo
+   - Mover/actualizar archivo según decisión
+   - Mantener historial si es actualización
+   - Actualizar README.md con cambios
+   - Limpiar INBOX de archivos procesados
+
+#### 🔍 **CRITERIOS DE DETECCIÓN DE RELACIONES**:
+
+**Para Bugs:**
+- Keywords: "bug", "fix", "error", "resolved", nombres de funciones/tablas
+- Buscar en: `🐛 ISSUES/BUGS/RESOLVED/`
+- Acción: Actualizar análisis existente o crear nuevo si es diferente
+
+**Para Features:**
+- Keywords: nombres de características, "update", "enhancement", "v2", "improvement"
+- Buscar en: `📚 DOCS/FEATURES/`
+- Acción: Crear nueva versión o fusionar mejoras
+
+**Para Arquitectura:**
+- Keywords: "audit", "schema", "database", nombres de sistemas
+- Buscar en: `📚 DOCS/ARCHITECTURE/`
+- Acción: Actualizar documentación existente
+
+**Para Scripts SQL:**
+- Keywords: nombres de tablas, funciones, triggers específicos
+- Buscar en: `🛠️ DEVELOPMENT/SQL/`
+- Acción: Versionar script o reemplazar si es corrección
+
+### 📋 **Ejemplos de Procesamiento Inteligente:**
+
+#### **Ejemplo 1: Archivo Nuevo (Sin Relaciones)**
 ```
-Contenido: "Bug analysis: login timeout"
-→ Destino: 📚 DOCUMENTATION/05_BUG_ANALYSIS/
-→ Nombre: LOGIN_BUG_ANALYSIS_TIMEOUT_ISSUE.md
+Archivo INBOX: "nueva_funcionalidad_reportes.md"
+Análisis: No encuentra documentos relacionados
+Acción: Procesar como nuevo
+→ Destino: 📚 DOCS/FEATURES/REPORTING_SYSTEM.md
+→ README actualizado con nuevo enlace
 ```
 
-#### Para archivos .sql:
+#### **Ejemplo 2: Actualización de Bug (CON Relación)**
 ```
-Contenido: "CREATE TABLE patients..."
-→ Destino: 🛠️ DEVELOPMENT/SQL_SCRIPTS/TABLES/
-→ Nombre: patients_table_definition.sql
+Archivo INBOX: "trigger_fix_update.md" 
+Análisis: Detecta relación con "TRIGGER_BUG_ANALYSIS_HANDLE_NEW_USER.md"
+Keywords coincidentes: "trigger", "handle_new_user", "bug fix"
+Decisión: OPCIÓN A - Actualizar documento existente
+→ Acción: Fusionar nuevo contenido en sección "## Actualizaciones v2.0"
+→ README mantiene enlace existente
 ```
 
-#### Para documentación técnica:
+#### **Ejemplo 3: Nueva Versión de Feature**
 ```
-Contenido: "Sistema de encriptación con pgsodium..."
-→ Destino: 📚 DOCUMENTATION/02_DATABASE/
-→ Nombre: ENCRYPTION_SYSTEM_PGSODIUM.md
+Archivo INBOX: "user_management_v2_improvements.md"
+Análisis: Detecta relación con "USER_MANAGEMENT_SOFT_DELETE_SYSTEM.md"
+Keywords coincidentes: "user management", "v2", "improvements"
+Decisión: OPCIÓN B - Crear nueva versión
+→ Destino: 📚 DOCS/FEATURES/USER_MANAGEMENT_SOFT_DELETE_SYSTEM_V2.md
+→ README actualizado con ambas versiones
 ```
+
+#### **Ejemplo 4: Mejora Solicitada**
+```
+Archivo INBOX: "enhancement_request_performance.md"
+Análisis: Detecta que es solicitud de mejora
+Keywords: "enhancement", "request", "performance"
+Decisión: OPCIÓN D - Mover a enhancements
+→ Destino: 🐛 ISSUES/ENHANCEMENTS/PERFORMANCE_OPTIMIZATION_REQUEST.md
+→ README actualizado en sección de mejoras solicitadas
+```
+
+#### **Ejemplo 5: Script SQL Actualizado**
+```
+Archivo INBOX: "create_users_table_v2.sql"
+Análisis: Detecta script SQL existente relacionado
+Keywords coincidentes: "users", "table", "create"
+Decisión: OPCIÓN B - Versionar
+→ Destino: 🛠️ DEVELOPMENT/SQL/SCHEMA/users_table_v2.sql
+→ Mantener versión anterior para historial
+```
+
+### 🔍 **Detección de Keywords Automática:**
+
+#### **Sistema de Matching:**
+1. **Título**: Extrae palabras clave del nombre del archivo
+2. **Contenido**: Analiza primeras 200 palabras por temas principales
+3. **Referencias**: Busca menciones a archivos/funciones existentes
+4. **Contexto**: Detecta si es "fix", "update", "v2", "enhancement", etc.
+
+#### **Score de Similitud:**
+- **90-100%**: Actualización directa → Fusionar contenido
+- **70-89%**: Versión relacionada → Crear nueva versión  
+- **50-69%**: Tema similar → Crear addendum o enhancement
+- **<50%**: Archivo nuevo → Procesar normalmente
 
 ## 🚀 Comandos Rápidos
 
 Cuando el usuario diga:
-- **"procesa inbox"** → Procesar automáticamente todos los archivos del INBOX
+- **"procesa inbox"** → Procesar automáticamente todos los archivos del INBOX CON detección inteligente
 - **"organiza"** → Revisar estructura completa y reorganizar
 - **"actualiza readme"** → Regenerar README.md con archivos actuales
 - **"limpia proyecto"** → Eliminar archivos vacíos y reorganizar
 - **"analiza [archivo]"** → Analizar un archivo específico antes de moverlo
 - **"nuevo archivo [nombre]"** → Ubicar y renombrar según contenido
+- **"busca relaciones [archivo]"** → **NUEVO** Buscar documentos relacionados sin mover
+- **"forzar nuevo"** → **NUEVO** Procesar como archivo nuevo (ignorar relaciones)
+- **"mostrar similares"** → **NUEVO** Mostrar archivos similares sin procesar
 
 ## 🎨 Estilo de Comunicación
 - **Conciso** y directo

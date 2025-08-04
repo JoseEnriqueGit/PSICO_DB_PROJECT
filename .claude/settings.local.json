@@ -9,7 +9,8 @@
       "Bash(copy \"📚 DOCUMENTATION\\02_DATABASE\\*.md\" \"📚 DOCS\\ARCHITECTURE\"\")",
       "Bash(cp:*)",
       "Bash(true)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(del \"C:\\Users\\ogand\\OneDrive\\Desktop\\Supabase\\PSICO_DB_PROJECT\\📥 INBOX\\update.md\")"
     ],
     "deny": []
   }
