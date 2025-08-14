@@ -12,6 +12,7 @@
       "Bash(ls:*)",
       "Bash(del \"C:\\Users\\ogand\\OneDrive\\Desktop\\Supabase\\PSICO_DB_PROJECT\\📥 INBOX\\update.md\")"
     ],
-    "deny": []
+    "deny": [],
+    "defaultMode": "acceptEdits"
   }
 }
