@@ -29,9 +29,13 @@ Este proyecto implementa una base de datos segura para una aplicación psicológ
 
 #### ⭐ Documentación de Features
 - [Implementación MVP Historia Clínica](📚%20DOCS/FEATURES/MVP_CLINICAL_RECORDS_IMPLEMENTATION.md)
+- [Sistema de Registro de Pacientes - Overview Completo](📚%20DOCS/FEATURES/PATIENT_SYSTEM_OVERVIEW.md)
 - [Sistema de Gestión de Usuarios](📚%20DOCS/FEATURES/USER_MANAGEMENT_SOFT_DELETE_SYSTEM.md)
 - [Sistema de Eliminación Permanente](📚%20DOCS/FEATURES/USER_PERMANENT_DELETION_SYSTEM.md)
 - [Sistema de Eliminación Automática de Terminales](📚%20DOCS/FEATURES/USER_TERMINAL_AUTO_DELETION_SYSTEM.md)
+
+#### 📱 Frontend Documentation
+- [Patient Registration UI (Flutter)](📚%20DOCS/FEATURES/FRONTEND/patient_registration_flutter_ui.md)
 
 ---
 
@@ -45,13 +49,25 @@ Este proyecto implementa una base de datos segura para una aplicación psicológ
 #### ⚙️ Scripts SQL - Funciones
 - [AllFunctionScripts.sql](🛠️%20DEVELOPMENT/SQL/FUNCTIONS/AllFunctionScripts.sql)
 - [cleanup_obsolete_functions.sql](🛠️%20DEVELOPMENT/SQL/FUNCTIONS/cleanup_obsolete_functions.sql)
+- [patient_management_functions.sql](🛠️%20DEVELOPMENT/SQL/FUNCTIONS/patient_management_functions.sql)
 
 #### 🌐 Edge Functions
 - [create-terminal.ts](🛠️%20DEVELOPMENT/CONFIGS/supabase/create-terminal.ts) - Creación de terminales
 - [get-dropdown-data.ts](🛠️%20DEVELOPMENT/CONFIGS/supabase/get-dropdown-data.ts) - Datos en cascada
+- [create-patient-edge-function.md](🛠️%20DEVELOPMENT/CONFIGS/supabase/create-patient-edge-function.md) - Sistema de registro de pacientes
 
 #### 🗄️ Scripts SQL - Esquemas
 - [AllTablesScripts.sql](🛠️%20DEVELOPMENT/SQL/SCHEMA/AllTablesScripts.sql)
+
+---
+
+### 📡 API Documentation
+- [Patient Endpoints](📚%20DOCS/API/patient_endpoints.md) - Especificación completa de API
+
+---
+
+### 🧪 Testing
+- [Patient System Test Cases](🧪%20TESTING/patient_system_test_cases.md) - Suite completa de pruebas
 
 ---
 
@@ -64,9 +80,12 @@ PSICO_DB_PROJECT/
 │   ├── ARCHITECTURE/                  # Arquitectura del sistema
 │   │   ├── DATABASE/                  # Documentación de la Base de Datos
 │   ├── FEATURES/                      # Documentación de características
+│   │   └── FRONTEND/                  # Documentación de UI
+│   └── API/                           # Documentación de APIs
 ├── 📋 CHANGELOG/                      # Control de cambios
 ├── 🐛 ISSUES/                        # Gestión de problemas
 ├── 🛠️ DEVELOPMENT/                    # Recursos de desarrollo
+├── 🧪 TESTING/                        # Casos de prueba y testing
 └── 🤖 AI_RESOURCES/                   # Recursos para IA
 ```
 
@@ -81,6 +100,9 @@ PSICO_DB_PROJECT/
 | 🏗️ **Arquitectura** | [Sistema de Auditoría](📚%20DOCS/ARCHITECTURE/DATABASE/AUDIT_SYSTEM.md) | Implementación del sistema de auditoría |
 | 🔄 **Flujo Integral** | [Onboarding Completo](📚%20DOCS/ARCHITECTURE/USER_ONBOARDING_COMPLETE_FLOW.md) | Frontend + Backend + Base de Datos |
 | ⭐ **Features** | [Gestión de Usuarios](📚%20DOCS/FEATURES/USER_MANAGEMENT_SOFT_DELETE_SYSTEM.md) | Sistema completo con soft delete |
+| 👥 **Pacientes** | [Sistema de Registro de Pacientes](📚%20DOCS/FEATURES/PATIENT_SYSTEM_OVERVIEW.md) | Implementación completa distribuida en componentes |
+| 📡 **API** | [Patient Endpoints](📚%20DOCS/API/patient_endpoints.md) | Especificación completa de API REST |
+| 🧪 **Testing** | [Patient Test Cases](🧪%20TESTING/patient_system_test_cases.md) | Suite de pruebas integral |
 
 ---
 
