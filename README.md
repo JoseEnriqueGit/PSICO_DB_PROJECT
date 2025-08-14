@@ -44,6 +44,7 @@ Este proyecto implementa una base de datos segura para una aplicación psicológ
 ### 🛠️ Recursos de Desarrollo
 #### ⚙️ Scripts SQL - Funciones
 - [AllFunctionScripts.sql](🛠️%20DEVELOPMENT/SQL/FUNCTIONS/AllFunctionScripts.sql)
+- [cleanup_obsolete_functions.sql](🛠️%20DEVELOPMENT/SQL/FUNCTIONS/cleanup_obsolete_functions.sql)
 
 #### 🌐 Edge Functions
 - [create-terminal.ts](🛠️%20DEVELOPMENT/CONFIGS/supabase/create-terminal.ts) - Creación de terminales

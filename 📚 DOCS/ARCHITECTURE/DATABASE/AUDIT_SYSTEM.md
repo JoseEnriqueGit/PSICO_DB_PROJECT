@@ -1,6 +1,7 @@
 ## Documentación: Implementación del Sistema de Auditoría Avanzado
 
-**Fecha:** 5 de Agosto de 2025
+**Fecha:** 5 de Agosto de 2025  
+**Actualizado:** 11 de Agosto de 2025 (v2.0)
 
 **1. Resumen:**
 Se ha implementado un sistema de auditoría avanzado en la base de datos PostgreSQL (Supabase). Los objetivos principales son:
@@ -57,3 +58,51 @@ Se ha implementado un sistema de auditoría avanzado en la base de datos Postgre
 * Configurar Row Level Security (RLS) en `audit_log_entries` para controlar quién puede ver qué logs.
 * Automatizar la creación de particiones futuras para `audit_log_entries` (ej. usando `pg_cron` y la función `manage_audit_log_partitions`).
 * Establecer políticas de retención, archivado y purga para `audit_log_entries`.
+
+---
+
+## Refactorización y Limpieza de la Base de Datos (Agosto 2025)
+
+### Actualizaciones Implementadas - Versión 2.0
+
+#### 1. Corrección de Columnas de Auditoría (`updated_at` y `updated_by`)
+
+**Problema Identificado**: Al crear un nuevo registro, las columnas `updated_at` y `updated_by` se estaban poblando incorrectamente en la operación `INSERT`.
+
+**Solución Aplicada**: Modificación de la función `handle_audit_columns_trigger_func()` para establecer `updated_at` y `updated_by` como `NULL` en operaciones `INSERT`:
+
+```sql
+IF (TG_OP = 'INSERT') THEN
+    NEW.created_at := clock_timestamp();
+    NEW.updated_at := NULL; -- CORRECCIÓN
+    NEW.updated_by := NULL;
+    ...
+```
+
+#### 2. Estandarización del Borrado Lógico (Soft Delete)
+
+**Mejora Implementada**: Se añadió la columna `deleted_by` a todas las tablas con borrado lógico:
+
+- **34 tablas actualizadas** con `deleted_by uuid NULL`
+- **Llave foránea** a `auth.users(id)` con `ON DELETE SET NULL`
+- **Integración automática** con la función `soft_delete_generic()` existente
+
+#### 3. Eliminación de Funciones Obsoletas
+
+**Funciones Eliminadas por Categoría**:
+
+| Categoría | Funciones Eliminadas | Justificación |
+|-----------|---------------------|---------------|
+| **Flujo Obsoleto** | `create_initial_admin_and_terminal()`, `create_user_in_public()` | Contrario al flujo actual, manejado por triggers |
+| **Redundancia** | `update_updated_at_column()`, `create_professional_profile()` | Lógica ya cubierta por funciones centralizadas |
+| **Desarrollo/Testing** | `sync_*`, `repair_*`, `test_*`, `monitor_*` | Funciones para desarrollo no productivo |
+| **Huérfanas** | `get_next_available_id()`, `refresh_mv_catalog_dropdown()` | Sin uso en esquema actual |
+
+**Funciones Conservadas**: Las funciones administrativas como `permanently_delete_user`, `restore_deleted_user` fueron mantenidas por su valor para gestión de datos.
+
+#### 4. Impacto en la Integridad del Sistema
+
+- ✅ **Auditoría mejorada**: Registro completo de quién eliminó registros
+- ✅ **Datos más limpios**: Estados iniciales correctos sin `updated_at` falsos
+- ✅ **Menor superficie de error**: Eliminación de código muerto
+- ✅ **Mantenimiento simplificado**: Esquema más coherente y actualizado
